@@ -1,3 +1,5 @@
+module.export = Phrase;
+
 function reverse(string){
 	return Array.from(string).reverse().join("");
 }
