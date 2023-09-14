@@ -1,4 +1,4 @@
-module.export = Phrase;
+module.exports = Phrase;
 
 function reverse(string){
 	return Array.from(string).reverse().join("");
@@ -13,7 +13,7 @@ function Phrase(content){
 	this.content = content;
 	
 	this.processedContent = function processedContent(){
-		return this.processor(this.content);
+		return this.processor(this.letters());
 	}
 
 	this.palindrome = function palindrome(){
@@ -26,6 +26,10 @@ function Phrase(content){
 
 	this.processor = function(string){
 		return string.toLowerCase();
+	}
+
+	this.letters = function(){
+		return (this.content.match(/[a-zA-z]/gi) || []).join("");
 	}
 }
 
